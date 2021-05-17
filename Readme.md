@@ -1,6 +1,5 @@
 ## Kafka Api
-
-
+Distributes Post Json Object sent by producer to Topics
 
 ### Setup & Installation
 
@@ -16,11 +15,10 @@ cd Oss-Kafka
 docker-compose up --build
 ```
 
-### Example Curl Request
+### Curl Request
 ```sh
 curl -X POST  -d "[{\"id\":\"1\"},{\"id\":\"2\"}]" -H "Content-Type: application/json" localhost:3000/producer
 ```
-
 #### Output
 <pre>
 <i>
