@@ -1,5 +1,5 @@
 const { Kafka } = require("kafkajs");
-// const log_data = require("../system_logs.json");
+
 let producer;
 run();
 async function  run(){
@@ -18,7 +18,7 @@ async function  run(){
 async function createProducer(req,res){
  
   log_data=req.body;
- //console.log(req.body);
+
   try {
     
     let messages = log_data.map(item => {
@@ -33,7 +33,6 @@ async function createProducer(req,res){
       messages: messages
     });
     res.send(message_result);
-    //await producer.disconnect();
   } catch (error) {
     console.log("Bir Hata Oluştu", error);
   } 

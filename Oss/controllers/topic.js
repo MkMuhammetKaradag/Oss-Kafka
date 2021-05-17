@@ -7,11 +7,10 @@ async function createTopic() {
   });
 
   const admin = kafka.admin();
-  //console.log("Kafka Broker'a bağlanılıyor...");
   await admin.connect();
-  //console.log("Kafka Broker'a bağlantı başarılı, Topic üretilecek..");
+
   try {
-    // Admin Stuff..
+
     await admin.createTopics({
       topics: [
         {
@@ -20,12 +19,12 @@ async function createTopic() {
         }
       ]
     });
-    console.log("Topic Başarılı bir şekilde oluşturulmuştur...");
+    console.log("Topic oluşturulmuştur...");
     await admin.disconnect();
   } catch (error) {
     console.log("Bir Hata Oluştu", error);
   } finally {
-    //process.exit(0);
+ 
   }
 }
 
