@@ -31,6 +31,6 @@ async function createConsumer() {
       }
     });
   } catch (error) {
-    console.log("Bir Hata Oluştu", error);
+    console.log("Hata Oluştu", error);
   }
 }

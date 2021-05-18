@@ -22,7 +22,7 @@ async function createTopic() {
     console.log("Topic oluşturulmuştur...");
     await admin.disconnect();
   } catch (error) {
-    console.log("Bir Hata Oluştu", error);
+    console.log("Hata Oluştu", error);
   } finally {
  
   }

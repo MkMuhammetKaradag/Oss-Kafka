@@ -34,7 +34,7 @@ async function createProducer(req,res){
     });
     res.send(message_result);
   } catch (error) {
-    console.log("Bir Hata Oluştu", error);
+    console.log("Hata Oluştu", error);
   } 
 }
 module.exports.postcreateProducer=createProducer;
