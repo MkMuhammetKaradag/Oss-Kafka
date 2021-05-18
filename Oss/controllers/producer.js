@@ -4,24 +4,24 @@ let producer;
 run();
 async function  run(){
    const kafka = new Kafka({
-    clientId: "kafka_log_store_client",
+    clientId: "kafka_client",
     brokers: ["kafka:9092"]
   });
   
   producer = kafka.producer();
-  console.log("Producer'a bağlanılıyor..");
+  console.log("Producer-bağlanılıyor");
   await producer.connect();
-  console.log("Bağlantı başarılı.");
+  console.log("Bağlantı-başarılı");
   
 }
 
 async function createProducer(req,res){
  
-  log_data=req.body;
+  data=req.body;
 
   try {
     
-    let messages = log_data.map(item => {
+    let messages = data.map(item => {
       return {
         value: JSON.stringify(item),
         partition: item.id == "1" ? 0 : 1
@@ -29,7 +29,7 @@ async function createProducer(req,res){
     });
 
     const message_result = await producer.send({
-      topic: "LogStoreTopic",
+      topic: "Topic",
       messages: messages
     });
     res.send(message_result);

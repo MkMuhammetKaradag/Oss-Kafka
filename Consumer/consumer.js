@@ -5,28 +5,28 @@ createConsumer();
 async function createConsumer() {
   try {
     const kafka = new Kafka({
-      clientId: "kafka_log_store_client",
+      clientId: "kafka_client",
       brokers: ["kafka:9092"]
     });
 
     const consumer = kafka.consumer({
-      groupId: "ornek_3"
+      groupId: "consumer_group"
     });
 
-    console.log("Consumer'a bağlanılıyor..");
+    console.log("Consumer-bağlanılıyor");
     await consumer.connect();
-    console.log("Bağlantı başarılı.");
+    console.log("Bağlantı-başarılı");
 
 
     await consumer.subscribe({
-      topic: "LogStoreTopic",
+      topic: "Topic",
       fromBeginning: true
     });
 
     await consumer.run({
       eachMessage: async result => {
         console.log(
-          `Gelen Mesaj ${result.message.value}, Par => ${result.partition}`
+          `Gelen_Mesaj:=>${result.message.value}, Partition:=> ${result.partition}`
         );
       }
     });

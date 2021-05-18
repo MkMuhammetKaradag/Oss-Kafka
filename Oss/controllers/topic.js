@@ -2,7 +2,7 @@ const { Kafka } = require("kafkajs");
 
 async function createTopic() {
   const kafka = new Kafka({
-    clientId: "kafka_log_store_client",
+    clientId: "kafka_client",
     brokers: ["kafka:9092"]
   });
 
@@ -14,7 +14,7 @@ async function createTopic() {
     await admin.createTopics({
       topics: [
         {
-          topic: "LogStoreTopic",
+          topic: "Topic",
           numPartitions: 2
         }
       ]
