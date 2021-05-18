@@ -4,20 +4,20 @@ Distributes Post Json Object sent by producer to Topics
 
 ### Setup & Installation
 
-```sh
+```
 git clone https://github.com/MkMuhammetKaradag/Oss-Kafka.git
 ```
 
-```sh
+```
 cd Oss-Kafka
 ```
 
-```sh
+```
 docker-compose up --build
 ```
 
 ### Curl Request
-```sh
+```
 curl -X POST  -d "[{\"id\":\"1\"},{\"id\":\"2\"}]" -H "Content-Type: application/json" localhost:3000/producer
 ```
 #### Output
